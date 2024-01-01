@@ -34,10 +34,10 @@ class KotlinCollection {
     fun changeToStringFormatOfCollection() {
         val list = listOf(1, 2, 3)
 
-        println(joinToString(list, ",", "", ""))
-        println(joinToString(list))
-        println(joinToString(list, "; "))
-        println(joinToString(list, postfix = ";", prefix = "# "))
+        println(joinToStringVer1(list, ",", "", ""))
+        println(joinToStringVer1(list))
+        println(joinToStringVer1(list, "; "))
+        println(joinToStringVer1(list, postfix = ";", prefix = "# "))
 
     }
 }
