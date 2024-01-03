@@ -63,4 +63,25 @@ class KotlinCollection {
         println()
     }
 
+    @Test
+    fun infixCall() {
+        val map = mapOf(1 to "one", 7 to "seven", 53 to "fifty-three")
+        val map2 = mapOf(1.to("one"), 7.to("seven"), 53.to("fifty-three"))
+
+        assert(map == map2)
+    }
+
+    @Test
+    fun destructuringDeclaration() {
+        val (number, name) = 1 to "one"
+        assert(number == 1)
+        assert(name == "one")
+
+        val list = listOf(3, 6, 9)
+
+        for ((index, element) in list.withIndex()) {
+            println("$index: $element")
+        }
+    }
+
 }
