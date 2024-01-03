@@ -49,4 +49,18 @@ class KotlinCollection {
         println(numbers.max()) // 14 printed
     }
 
+    @Test
+    fun varargTest() {
+        val numbers = intArrayOf(1, 2, 3)
+        printNumbers(*numbers) // 스프레드 연산자를 사용하여 배열을 가변 인자로 전달
+        printNumbers(*numbers, 4, 5) // 배열의 요소와 추가적인 값들을 함께 전달
+    }
+
+    private fun printNumbers(vararg numbers: Int) {
+        numbers.forEach { number ->
+            print("$number ")
+        }
+        println()
+    }
+
 }
