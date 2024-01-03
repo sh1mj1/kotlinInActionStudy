@@ -38,6 +38,15 @@ class KotlinCollection {
         println(joinToStringVer1(list))
         println(joinToStringVer1(list, "; "))
         println(joinToStringVer1(list, postfix = ";", prefix = "# "))
-
     }
+
+    @Test
+    fun collectionExtension() {
+        val strings: List<String> = listOf("first", "second", "fourteenth")
+        println(strings.last()) // fourteenth printed
+
+        val numbers: Collection<Int> = setOf(1, 14, 2)
+        println(numbers.max()) // 14 printed
+    }
+
 }
