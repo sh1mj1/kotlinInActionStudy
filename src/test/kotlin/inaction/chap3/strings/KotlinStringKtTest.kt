@@ -9,4 +9,13 @@ class KotlinStringKtTest {
 
     @Test
     fun splitString2Test() = splitString2("12.345-6.A")
+
+    @Test
+    fun parsePath1Test() = parsePath1("/Users/sh1mj1/kotlin-book/chapter.adoc")
+
+    @Test
+    fun parsePath2Test() = parsePath2("/Users/sh1mj1/kotlin-book/chapter.adoc")
+
+    @Test
+    fun multilineStringTest() = multilineString()
 }
