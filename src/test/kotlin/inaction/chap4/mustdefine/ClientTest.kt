@@ -1,7 +1,7 @@
 package inaction.chap4.mustdefine
 
-import inaction.chap1.Person
 import org.junit.jupiter.api.Test
+import kotlin.test.assertTrue
 
 class ClientTest {
     @Test
@@ -17,5 +17,10 @@ class ClientTest {
         assert(client1 == client2)
     }
 
+    @Test
+    fun testContains() {
+        val set = hashSetOf(Client("sh1mj1", 4122))
+        assertTrue { set.contains(Client("sh1mj1", 4122)) } // FAIL
+    }
 
 }

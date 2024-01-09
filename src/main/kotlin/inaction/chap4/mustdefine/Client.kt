@@ -9,5 +9,11 @@ class Client(val name: String, val postalCode: Int) {
         return name == other.name && postalCode == other.postalCode
     }
 
+    override fun hashCode(): Int {
+        var result = name.hashCode()
+        result = result * 31 + postalCode.hashCode()
+        return result
+    }
+
     override fun toString(): String = "Client(name='$name', postalCode=$postalCode)"
 }
