@@ -1,6 +1,5 @@
 package inaction.chap6.nullability1
 
-import inaction.chap6.nullability1.safeCast4.Person
 
 fun strLen(s: String) = s.length
 

@@ -19,7 +19,7 @@ class Nullability14KtTest {
 
     @Test
     fun testCountryName() {
-        val person = inaction.chap6.nullability1.safeCast4.Person("Dmitry", null)
+        val person = Person("Dmitry", null)
         assert(person.countryName() == "Unknown")
     }
 
@@ -27,7 +27,7 @@ class Nullability14KtTest {
     fun testPrintShippingLabel() {
         val address = Address("Elseter. 47", 80687, "Munich", "Germany")
         val jetbrains = Company("JetBrains", address)
-        val person = inaction.chap6.nullability1.safeCast4.Person("Dmitry", jetbrains)
+        val person = Person("Dmitry", jetbrains)
         printShippingLabel(person)
     }
 }
