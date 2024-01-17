@@ -1,5 +1,8 @@
 package inaction.chap6.nullability1.nullableExtension9
 
+import kotlin.contracts.ExperimentalContracts
+import kotlin.contracts.contract
+
 fun verifyUserInput(input: String?) {
     if (input.isNullOrBlank()) {
         println("Please fill in the required fields")
@@ -13,9 +16,13 @@ fun verifyUserInputNormal(input: String?) {
         println("Please fill in the required fields")
         return
     }
-//    println("input length: ${input.length}") // 컴파일 에러 발생
+    println("input length: ${input.length}") // 컴파일 에러 발생 안함
 }
 
+@OptIn(ExperimentalContracts::class)
 fun nullOrBlank(input: String?): Boolean {
+    contract{
+        returns(false) implies (input != null)
+    }
     return input == null || input.isBlank()
 }
