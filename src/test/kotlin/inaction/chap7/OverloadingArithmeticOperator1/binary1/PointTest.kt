@@ -1,10 +1,8 @@
 package inaction.chap7.OverloadingArithmeticOperator1.binary1
 
-import inaction.chap7.OverloadingArithmeticOperator1.Point
-import inaction.chap7.OverloadingArithmeticOperator1.plus
-import inaction.chap7.OverloadingArithmeticOperator1.plusAssign
-import inaction.chap7.OverloadingArithmeticOperator1.times
+import inaction.chap7.OverloadingArithmeticOperator1.*
 import org.junit.jupiter.api.Test
+import java.math.BigDecimal
 
 class PointTest {
     @Test
@@ -73,4 +71,18 @@ class PointTest {
         val newList = list + listOf(4, 5)
         assert(newList == listOf(1, 2, 3, 4, 5))
     }
+
+    @Test
+    fun testUnaryMinusPoint() {
+        val p = Point(10, 20)
+        assert(-p == Point(-10, -20))
+    }
+
+    @Test
+    fun testBigDecimalInc() {
+        var bd = BigDecimal.ZERO
+        assert(bd++ == BigDecimal.ZERO) // 후위 증가 연산자는 assert 가 실행된 다음에 값을 증가
+        assert(++bd == BigDecimal.TWO) // 전위 증가 연산자는  assert 가 실행되기 전에 값을 증가
+    }
+
 }
